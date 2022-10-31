@@ -24,14 +24,10 @@ def get_sql_conn():
 
 
 def get_postgres_creds():
-    #get password from environmnet var
-    pwd = os.environ['PGPASS']
-    uid = os.environ['PGUID']
-    #
     server = 'localhost'
-    db =  'AdventureWorks'
-    uid = uid
-    pwd = pwd
+    db =  'dagster'
+    uid = 'postgres_user'
+    pwd = 'postgres_password'
     port = 5432
     cs = create_engine(f'postgresql://{uid}:{pwd}@{server}:{port}/{db}')
     try:
